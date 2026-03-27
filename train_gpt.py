@@ -1089,13 +1089,13 @@ class GPT(nn.Module):
 # -----------------------------
 
 def main() -> None:
-    global zeropower_via_ifnso
+    global zeropower_via_newtonschulz5
 
     code = Path(__file__).read_text(encoding="utf-8")
     args = Hyperparameters()
-    # zeropower_via_ifnso is the correct function name in this script
-    global zeropower_via_ifnso
-    zeropower_via_ifnso = torch.compile(zeropower_via_ifnso)
+    # zeropower_via_newtonschulz5 is the correct function name in this script
+    global zeropower_via_newtonschulz5
+    zeropower_via_newtonschulz5 = torch.compile(zeropower_via_newtonschulz5)
 
     distributed = "RANK" in os.environ and "WORLD_SIZE" in os.environ
     rank = int(os.environ.get("RANK", "0"))
